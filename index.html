@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Joseph — NMR spectroscopy &amp; quantum optimal control</title>
+<meta name="description" content="David Joseph designs quantum optimal control pulses for ultrahigh-field biomolecular NMR at the Technical University of Munich. Ernst Award 2024. Author of the Pulsar.jl optimal control toolbox.">
+<meta name="author" content="David Joseph">
+<link rel="canonical" href="https://dajo2025.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="David Joseph">
+<meta property="og:title" content="David Joseph — NMR spectroscopy &amp; quantum optimal control">
+<meta property="og:description" content="David Joseph designs quantum optimal control pulses for ultrahigh-field biomolecular NMR at the Technical University of Munich. Ernst Award 2024. Author of the Pulsar.jl optimal control toolbox.">
+<meta property="og:url" content="https://dajo2025.github.io/">
+<meta property="og:image" content="https://dajo2025.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧲</text></svg>">
+<link rel="stylesheet" href="/assets/style.css?v=e96af88d">
+<script src="/assets/main.js?v=fb1b348e"></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav__home" href="/">David&nbsp;Joseph</a>
+      <ul class="site-nav__links" id="site-nav-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/software.html">Software</a></li>
+        <li><a href="/teaching.html">Teaching</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="site-nav__tools">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav-links"><span class="navicon"></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <aside class="sidebar" aria-label="About David Joseph">
+    <div class="author">
+      <!-- Swap the photo by replacing assets/img/portrait.jpg (square, 400px or larger). -->
+      <a class="author__avatar" href="/"><img src="/assets/img/portrait.jpg?v=036eb028" alt="David Joseph" width="600" height="600"></a>
+      <div class="author__content">
+        <p class="author__name">David Joseph</p>
+        <p class="author__bio">Postdoctoral Associate at TU&nbsp;Munich</p>
+      </div>
+      <div class="author__urls-wrapper">
+        <button class="author__urls-toggle" type="button" aria-expanded="false" aria-controls="author-urls">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>
+          Links
+        </button>
+        <ul class="author__urls" id="author-urls">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+            Garching, Germany
+          </li>
+          <li><a href="mailto:dajo.science@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v.4l-10 6.2L2 6.4V6a1 1 0 0 1 1-1zm-1 3.75V18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8.75l-10 6.2-10-6.2z"/></svg>
+            Email</a></li>
+          <li><a href="https://github.com/DaJo2025" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/david-joseph-37a0b9389/" rel="me noopener" target="_blank">
+            <svg class="ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1.5 7.5v9h3v-9h-3zM7 5.2a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm3.5 4.3v9h3v-4.7c0-1.3.7-2 1.7-2s1.5.7 1.5 2v4.7h3v-5.3c0-2.6-1.4-4-3.4-4-1.3 0-2.2.6-2.8 1.4V9.5h-3z"/></svg>
+            LinkedIn</a></li>
+          <li><a href="https://x.com/DaJo_1729" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            X / Twitter</a></li>
+          <li><a href="https://bsky.app/profile/dajo-1729.bsky.social" rel="me noopener" target="_blank">
+            <svg class="ico-bluesky" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+            Bluesky</a></li>
+          <!-- TODO: uncomment once you have the URLs.
+          <li><a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">
+            <svg class="ico-orcid" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zM7.2 8.3h1.7v8.9H7.2V8.3zm.85-3.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zm3.25 3.1h3.5c3 0 4.7 2 4.7 4.45 0 2.5-1.8 4.45-4.7 4.45h-3.5V8.3zm1.7 1.5v5.9h1.7c2 0 3-1.3 3-2.95 0-1.6-1-2.95-3-2.95H13z"/></svg>
+            ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=XXXXXXX" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>
+            Google Scholar</a></li>
+          -->
+          <li><a href="/CV_DaJo_2026.pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L13 3.5zM7.5 12v1.5h9V12h-9zm0 3.5V17h9v-1.5h-9z"/></svg>
+            CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+<main id="main" class="home">
+
+  <!-- Name, role, photo and profile links live in the sidebar (templates/layout.html). -->
+  <h1 class="visually-hidden">David Joseph</h1>
+
+  <section>
+    <p>
+      I’m a postdoctoral associate at the Technical University of Munich, where I design
+      quantum optimal-control pulses for applications such as magnetic resonance (MR). My work
+      aims to recover sensitivity that would otherwise be lost because of hardware limitations.
+    </p>
+    <p>
+      More broadly, I develop quantum-control and machine-learning methods to solve problems
+      in the life sciences, physics, and chemistry. One question I hope to address over the
+      course of my career is: How can we map the dynamical properties of biomolecules to their
+      functional properties?
+    </p>
+    <p>
+      Previously, I was at the Max Planck Institute for Multidisciplinary Sciences in
+      Göttingen, where I first completed my PhD (<em>summa cum laude</em>, 2024) and then
+      worked as a postdoctoral researcher for one year. There, my research focused on
+      developing a robust quantum optimal-control
+      <a href="/research-optimal-control.html">pulse-sequence library for 1.2 GHz
+      spectrometers</a> to overcome instrumental limitations. The resulting publication
+      received the Ernst Award from the Division of Magnetic Resonance of the German Chemical
+      Society (GDCh) and the JMR/JMRO Young Scientist Award at EUROMAR 2024.
+    </p>
+    <p>
+      Before that, I developed
+      <a href="/research-metabolomics.html">rapid NMR methods for metabolomics</a> at the
+      Indian Institute of Science in Bangalore. I also created
+      <a href="/software.html">Pulsar.jl</a>, an open-source Julia toolbox for designing
+      quantum optimal-control pulses.
+    </p>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+
+    <!-- Shared by the homepage and the Research page: a content file pulls it in with the research_map placeholder.
+     The overview figure, with a transparent link tab for each published paper and each
+     project in preparation (not the obituary or the submitted paper), placed on the
+     research area(s) it belongs to; a paper that fits two areas appears on both. The tabs are always on the figure; on a phone the figure keeps a
+     readable size and scrolls sideways.
+     Positions are set in assets/style.css (.research-map__group--…). -->
+<figure class="research-map">
+  <div class="research-map__stage">
+    <div class="research-map__canvas">
+      <img src="/assets/img/research-map.jpg?v=89cf2411" width="1536" height="1024"
+           alt="Overview of my research areas: quantum optimal control, NMR metabolomics and biomedical applications, quantum technologies, AI for dynamics, and advanced MR methodologies.">
+
+      <div class="research-map__group research-map__group--qoc">
+        <span class="research-map__label">Quantum optimal control</span>
+        <a href="https://doi.org/10.1126/sciadv.adj1133" title="Optimal control pulses for the 1.2 GHz (28.2 T) NMR spectrometers — Science Advances 9, eadj1133 (2023)" target="_blank" rel="noopener">Sci. Adv. 2023</a>
+        <a href="https://doi.org/10.1016/j.jmr.2026.108030" title="Optimal control pulses for Bloch–Siegert shift free NMR experiments — J. Magn. Reson. 386, 108030 (2026)" target="_blank" rel="noopener">JMR 2026a</a>
+        <a href="https://doi.org/10.1016/j.jmr.2026.108081" title="Low-power optimal control pulse sequences enhance the sensitivity of a 5 mm triple-resonance cryogenic probe at 1.2 GHz — J. Magn. Reson. 389, 108081 (2026)" target="_blank" rel="noopener">JMR 2026b</a>
+        <a href="https://doi.org/10.1016/j.jmr.2025.107972" title="15N optimal control pulses: an efficient approach to boost 13C-detected NMR experiments — J. Magn. Reson. 381, 107972 (2025)" target="_blank" rel="noopener">JMR 2025</a>
+        <a href="https://www.globalnmr.org/pulsar-jl-a-unified-julia-framework-for-pulse-design-across-magnetic-resonance-and-quantum-technologies/" title="Pulsar.jl: a unified Julia framework for pulse design across magnetic resonance and quantum technologies — in preparation" target="_blank" rel="noopener">Pulsar.jl</a>
+        <a href="https://www.globalnmr.org/pulsar-studio-a-graphical-interface-for-quantum-optimal-control-pulse-design/" title="Pulsar Studio: a graphical interface for quantum optimal-control pulse design — in preparation" target="_blank" rel="noopener">Pulsar Studio</a>
+      </div>
+
+      <div class="research-map__group research-map__group--ai">
+        <span class="research-map__label">AI for dynamics</span>
+        <a href="https://www.globalnmr.org/physics-informed-neural-network-for-conformational-state-prediction-from-nmr-spectra/" title="Physics-informed neural network for conformational-state prediction from NMR spectra — in preparation" target="_blank" rel="noopener">PINN (in prep.)</a>
+      </div>
+
+      <div class="research-map__group research-map__group--metab">
+        <span class="research-map__label">NMR metabolomics &amp; biomedical applications</span>
+        <a href="https://doi.org/10.1371/journal.pone.0273321" title="ICSI in non-male factor infertility patients does not alter metabolomic signature in sibling embryos — PLoS ONE 17, e0273321 (2022)" target="_blank" rel="noopener">PLoS ONE 2022</a>
+        <a href="https://doi.org/10.1021/acs.analchem.2c00565" title="A one-dimensional phase-modulated (PM) NMR experiment for differentiating spin systems in small-molecule mixtures — Analytical Chemistry 94, 16555 (2022)" target="_blank" rel="noopener">Anal. Chem. 2022</a>
+        <a href="https://doi.org/10.1007/s43032-022-01071-1" title="Combining machine learning with metabolomic and embryologic data improves embryo implantation prediction — Reproductive Sciences 30, 984 (2022)" target="_blank" rel="noopener">Reprod. Sci. 2022</a>
+        <a href="https://doi.org/10.1038/s42003-021-02191-1" title="PD-1 derived CA-170 is an oral immune checkpoint inhibitor that exhibits preclinical anti-tumor efficacy — Communications Biology 4, 699 (2021)" target="_blank" rel="noopener">Commun. Biol. 2021</a>
+        <a href="https://doi.org/10.1021/acsomega.1c01299" title="Insights into the NF-κB–DNA interaction through NMR spectroscopy — ACS Omega 6, 12877 (2021)" target="_blank" rel="noopener">ACS Omega 2021</a>
+        <a href="https://doi.org/10.1002/mrc.5106" title="Rapid NMR data acquisition with improved resolution and sensitivity for high-throughput metabolomic analysis — Magn. Reson. Chem. 59, 300 (2021)" target="_blank" rel="noopener">MRC 2021</a>
+        <a href="https://doi.org/10.1098/rsob.200092" title="The utility of nuclear magnetic resonance spectroscopy in assisted reproduction — Open Biology 10, 200092 (2020)" target="_blank" rel="noopener">Open Biol. 2020</a>
+        <a href="https://doi.org/10.1002/jssc.201700192" title="Capillary zone electrophoresis for the analysis of naturally occurring 2-hydroxycitric acids and their lactones — J. Sep. Sci. 40, 3351 (2017)" target="_blank" rel="noopener">J. Sep. Sci. 2017</a>
+      </div>
+
+      <div class="research-map__group research-map__group--qt">
+        <span class="research-map__label">Quantum technologies</span>
+        <a href="https://www.globalnmr.org/pulsar-jl-a-unified-julia-framework-for-pulse-design-across-magnetic-resonance-and-quantum-technologies/" title="Pulsar.jl: a unified Julia framework for pulse design across magnetic resonance and quantum technologies — in preparation" target="_blank" rel="noopener">Pulsar.jl</a>
+        <a href="https://www.globalnmr.org/pulsar-studio-a-graphical-interface-for-quantum-optimal-control-pulse-design/" title="Pulsar Studio: a graphical interface for quantum optimal-control pulse design — in preparation" target="_blank" rel="noopener">Pulsar Studio</a>
+      </div>
+
+      <div class="research-map__group research-map__group--adv">
+        <span class="research-map__label">Advanced MR methodologies</span>
+        <a href="https://doi.org/10.1016/j.jmr.2026.108030" title="Optimal control pulses for Bloch–Siegert shift free NMR experiments — J. Magn. Reson. 386, 108030 (2026)" target="_blank" rel="noopener">JMR 2026a</a>
+        <a href="https://doi.org/10.1016/j.jmr.2026.108081" title="Low-power optimal control pulse sequences enhance the sensitivity of a 5 mm triple-resonance cryogenic probe at 1.2 GHz — J. Magn. Reson. 389, 108081 (2026)" target="_blank" rel="noopener">JMR 2026b</a>
+        <a href="https://doi.org/10.1126/sciadv.adj1133" title="Optimal control pulses for the 1.2 GHz (28.2 T) NMR spectrometers — Science Advances 9, eadj1133 (2023)" target="_blank" rel="noopener">Sci. Adv. 2023</a>
+        <a href="https://doi.org/10.1016/j.jmr.2025.107972" title="15N optimal control pulses: an efficient approach to boost 13C-detected NMR experiments — J. Magn. Reson. 381, 107972 (2025)" target="_blank" rel="noopener">JMR 2025</a>
+        <a href="https://doi.org/10.1021/acs.analchem.2c00565" title="A one-dimensional phase-modulated (PM) NMR experiment for differentiating spin systems in small-molecule mixtures — Analytical Chemistry 94, 16555 (2022)" target="_blank" rel="noopener">Anal. Chem. 2022</a>
+        <a href="https://doi.org/10.1002/mrc.5106" title="Rapid NMR data acquisition with improved resolution and sensitivity for high-throughput metabolomic analysis — Magn. Reson. Chem. 59, 300 (2021)" target="_blank" rel="noopener">MRC 2021</a>
+      </div>
+    </div>
+  </div>
+  <figcaption class="research-map__hint">Swipe sideways to see the whole figure.</figcaption>
+</figure>
+
+    <p class="small"><a href="/research.html">More about my research →</a></p>
+  </section>
+
+  <section>
+    <h2>News</h2>
+    <!-- Add newest at the top. Keeping this current is the cheapest way to make the
+         site look alive to anyone who checks twice. -->
+    <ul class="news">
+      <li><span class="when">2026</span><span>After more than 20 unsuccessful postdoc applications, several promises that went nowhere, and interference with my applications, I’m starting as a postdoctoral associate at the <strong>Technical University of Munich</strong>. The ironies aren’t lost on me; at this point, it almost feels as though the universe is playing a joke.</span></li>
+      <li><span class="when">2026</span><span>Two of my papers are now out in <em>J. Magn. Reson.</em>: one on low-power sequences for a 5 mm cryogenic probe at 1.2 GHz, and the other on Bloch–Siegert-free optimal-control pulses. <a href="/publications.html">See publications</a>. I couldn’t persuade my PhD supervisor to publish them during my PhD. Publication kept being delayed for reasons I never understood, while I was forced to spend more than half my time “helping others” with work unrelated to my projects, work that would not earn me authorship. Both papers moved forward quickly during the five months I was unemployed.</span></li>
+      <li><span class="when">2026</span><span><strong>Pulsar.jl</strong> released, a Julia toolbox for optimal-control pulse design. <a href="/software.html">Details</a>.<br>I began the project after leaving my position at MPI-NAT. For nearly a year, I experienced bullying, gaslighting, and bigotry from a senior staff member. When I raised concerns, my supervisor offered no support and made me apologize for speaking up. The experience left me burned out and dealing with inflammation all over my body. I wrote most of Pulsar.jl in airport lounges and train stations while backpacking through India, navigating personal upheaval, and realizing that I would have to find my own way forward.</span></li>
+    </ul>
+  </section>
+
+</main>
+
+</div>
+
+<footer class="page__footer">
+  <div class="page__footer-inner">
+    <div class="page__footer-follow">
+      <ul>
+        <li><strong>Follow:</strong></li>
+        <li><a href="https://github.com/DaJo2025" rel="me noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/david-joseph-37a0b9389/" rel="me noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:dajo.science@gmail.com">Email</a></li>
+      </ul>
+    </div>
+    <div class="page__footer-copyright">
+      © <span id="yr">2026</span> David Joseph.
+    </div>
+  </div>
+</footer>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

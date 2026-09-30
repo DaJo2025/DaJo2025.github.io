@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulsar.jl — quantum optimal control in Julia | David Joseph</title>
+<meta name="description" content="Pulsar.jl is an open-source Julia toolbox for designing optimal control pulses for qubits and spin systems — GRAPE, Krotov, GOAT, CRAB and CMA-ES, closed- and open-system dynamics, ensemble-robust control, GPU backends.">
+<meta name="author" content="David Joseph">
+<link rel="canonical" href="https://dajo2025.github.io/software.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="David Joseph">
+<meta property="og:title" content="Pulsar.jl — quantum optimal control in Julia | David Joseph">
+<meta property="og:description" content="Pulsar.jl is an open-source Julia toolbox for designing optimal control pulses for qubits and spin systems — GRAPE, Krotov, GOAT, CRAB and CMA-ES, closed- and open-system dynamics, ensemble-robust control, GPU backends.">
+<meta property="og:url" content="https://dajo2025.github.io/software.html">
+<meta property="og:image" content="https://dajo2025.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧲</text></svg>">
+<link rel="stylesheet" href="/assets/style.css?v=e96af88d">
+<script src="/assets/main.js?v=fb1b348e"></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav__home" href="/">David&nbsp;Joseph</a>
+      <ul class="site-nav__links" id="site-nav-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/software.html" aria-current="page">Software</a></li>
+        <li><a href="/teaching.html">Teaching</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="site-nav__tools">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav-links"><span class="navicon"></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <aside class="sidebar" aria-label="About David Joseph">
+    <div class="author">
+      <!-- Swap the photo by replacing assets/img/portrait.jpg (square, 400px or larger). -->
+      <a class="author__avatar" href="/"><img src="/assets/img/portrait.jpg?v=036eb028" alt="David Joseph" width="600" height="600"></a>
+      <div class="author__content">
+        <p class="author__name">David Joseph</p>
+        <p class="author__bio">Postdoctoral Associate at TU&nbsp;Munich</p>
+      </div>
+      <div class="author__urls-wrapper">
+        <button class="author__urls-toggle" type="button" aria-expanded="false" aria-controls="author-urls">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>
+          Links
+        </button>
+        <ul class="author__urls" id="author-urls">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+            Garching, Germany
+          </li>
+          <li><a href="mailto:dajo.science@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v.4l-10 6.2L2 6.4V6a1 1 0 0 1 1-1zm-1 3.75V18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8.75l-10 6.2-10-6.2z"/></svg>
+            Email</a></li>
+          <li><a href="https://github.com/DaJo2025" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/david-joseph-37a0b9389/" rel="me noopener" target="_blank">
+            <svg class="ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm1.5 7.5v9h3v-9h-3zM7 5.2a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zm3.5 4.3v9h3v-4.7c0-1.3.7-2 1.7-2s1.5.7 1.5 2v4.7h3v-5.3c0-2.6-1.4-4-3.4-4-1.3 0-2.2.6-2.8 1.4V9.5h-3z"/></svg>
+            LinkedIn</a></li>
+          <li><a href="https://x.com/DaJo_1729" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+            X / Twitter</a></li>
+          <li><a href="https://bsky.app/profile/dajo-1729.bsky.social" rel="me noopener" target="_blank">
+            <svg class="ico-bluesky" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+            Bluesky</a></li>
+          <!-- TODO: uncomment once you have the URLs.
+          <li><a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener" target="_blank">
+            <svg class="ico-orcid" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zM7.2 8.3h1.7v8.9H7.2V8.3zm.85-3.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zm3.25 3.1h3.5c3 0 4.7 2 4.7 4.45 0 2.5-1.8 4.45-4.7 4.45h-3.5V8.3zm1.7 1.5v5.9h1.7c2 0 3-1.3 3-2.95 0-1.6-1-2.95-3-2.95H13z"/></svg>
+            ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=XXXXXXX" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>
+            Google Scholar</a></li>
+          -->
+          <li><a href="/CV_DaJo_2026.pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V8h4.5L13 3.5zM7.5 12v1.5h9V12h-9zm0 3.5V17h9v-1.5h-9z"/></svg>
+            CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+<main id="main">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Pulsar.jl",
+  "description": "Julia toolbox for designing optimal control pulses for quantum systems — qubits and spin systems.",
+  "codeRepository": "https://github.com/DaJo2025/Pulsar.jl",
+  "programmingLanguage": "Julia",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "author": { "@type": "Person", "name": "David Joseph" }
+}
+</script>
+
+  <p class="eyebrow">Software</p>
+  <h1>Pulsar.jl</h1>
+  <p class="lede">
+    A Julia toolbox for designing optimal control pulses for quantum systems — qubits
+    (transmon, trapped-ion, neutral-atom, spin-qubit, NV-center) and spin systems
+    (NMR, EPR, MAS solid-state, MRI, DNP).
+  </p>
+
+  <p>
+    <a class="btn" href="https://github.com/DaJo2025/Pulsar.jl" rel="noopener" target="_blank">Source on GitHub</a>
+    <a class="btn ghost" href="https://DaJo2025.github.io/Pulsar.jl/" rel="noopener" target="_blank">Documentation</a>
+  </p>
+  <p class="small muted" style="margin-top:1rem">Apache License 2.0 · Julia</p>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Why it exists</h2>
+    <p>
+      Optimal control produces demonstrably better pulses than analytical shapes, but the
+      barrier has rarely been the mathematics. It has been that every group writes its own
+      optimizer from scratch, tuned to one platform, and it never leaves the group. Meanwhile
+      the underlying problem is the same whether you are driving a transmon or a proton: find a
+      control waveform that steers a quantum system to a target while respecting hardware limits
+      and staying robust to what you cannot control.
+    </p>
+    <p>
+      Pulsar exists so that designing a pulse is something a spectroscopist or experimentalist
+      can do at the console, rather than a project requiring a numerics specialist. The same
+      optimizer that produces a broadband NMR inversion pulse produces a gate for a trapped-ion
+      qubit; only the Hamiltonian changes.
+    </p>
+  </section>
+
+  <section>
+    <h2>What's in it</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Optimizers</h3>
+        <p>GRAPE, L-BFGS-B, Krotov, GOAT, CRAB, CMA-ES, Nelder–Mead, basin hopping.</p>
+      </div>
+      <div class="card">
+        <h3>Dynamics</h3>
+        <p>Closed-system and open-system (Lindblad) propagation.</p>
+      </div>
+      <div class="card">
+        <h3>Robust control</h3>
+        <p>Ensemble optimization, so one pulse works across a distribution of system parameters.</p>
+      </div>
+      <div class="card">
+        <h3>Gradients</h3>
+        <p>Automatic differentiation, with ForwardDiff and Zygote loaded as package extensions.</p>
+      </div>
+      <div class="card">
+        <h3>Backends</h3>
+        <p>CPU, CUDA and Metal — the same code scales from a laptop to a GPU node.</p>
+      </div>
+      <div class="card">
+        <h3>License</h3>
+        <p>Apache 2.0. Free to use, modify and redistribute, including commercially.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Install</h2>
+    <p class="small muted">Pulsar.jl is in the Julia General registry, so it installs with the package manager:</p>
+    <div class="scroll-x">
+<pre><code>julia&gt; ]
+pkg&gt; add Pulsar</code></pre>
+    </div>
+    <p class="small">
+      The <a href="https://DaJo2025.github.io/Pulsar.jl/" rel="noopener" target="_blank">documentation</a>
+      includes a quickstart that walks through single-qubit state transfer with GRAPE — system
+      setup, target definition, control initialization and fidelity check.
+    </p>
+  </section>
+
+  <section>
+    <h2>Pulsar Studio</h2>
+    <p>
+      A graphical companion for designing and inspecting pulses without writing code — aimed at
+      spectroscopists who want a better pulse, not a numerics project. In preparation; the
+      accompanying paper is listed under <a href="/publications.html">publications</a>.
+    </p>
+    <!-- TODO: a screenshot of Pulsar Studio here would do more for this page than any
+         amount of prose. Drop it at assets/img/pulsar-studio.png and use:
+         <figure class="fig"><img src="/assets/img/pulsar-studio.png" alt="Pulsar Studio interface">
+         <figcaption>…</figcaption></figure> -->
+  </section>
+
+  <section>
+    <div class="note">
+      <strong>Using Pulsar in your work?</strong> I'd genuinely like to hear about it — especially
+      if it broke, or if your platform needs a Hamiltonian that isn't covered yet.
+      <a href="/contact.html">Get in touch</a> or
+      <a href="https://github.com/DaJo2025/Pulsar.jl/issues" rel="noopener" target="_blank">open an issue</a>.
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Published pulse libraries</h2>
+    <p>
+      Alongside the software, my published work provides ready-to-use optimal control pulse
+      sequences for ultrahigh-field spectrometers — including the 1.2 GHz library from
+      <em>Science Advances</em> (2023) and the low-power sequences for 5 mm triple-resonance
+      cryogenic probes from the <em>Journal of Magnetic Resonance</em> (2026).
+      See <a href="/research-optimal-control.html">the research page</a> for what went into them.
+    </p>
+  </section>
+
+</main>
+
+</div>
+
+<footer class="page__footer">
+  <div class="page__footer-inner">
+    <div class="page__footer-follow">
+      <ul>
+        <li><strong>Follow:</strong></li>
+        <li><a href="https://github.com/DaJo2025" rel="me noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/david-joseph-37a0b9389/" rel="me noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:dajo.science@gmail.com">Email</a></li>
+      </ul>
+    </div>
+    <div class="page__footer-copyright">
+      © <span id="yr">2026</span> David Joseph.
+    </div>
+  </div>
+</footer>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
